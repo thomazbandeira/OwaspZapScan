@@ -8,15 +8,24 @@
         },
         "containerGroupName": {
             "type": "string",
-            "defaultValue": "owaspzap"
+            "defaultValue": "owaspzapcontainer_grp"
         },
         "containerGroupLogAnalyticsWorkspaceName": {
             "type": "string",
-            "defaultValue": "owaspzaplogs"
+            "defaultValue": "owaspzap_logs"
         },
         "containerGroupLogAnalyticsWorkspaceSku": {
             "type": "string",
-            "defaultValue": "PerGB2018"
+            "defaultValue": "PerGB2018",
+            "allowedValues": [
+        "CapacityReservation",
+		"PerGB2018",
+        "Free",
+        "PerNode",
+        "Premium",
+        "Standalone",
+        "Standard"
+      ]
         }
     },
     "resources": [
@@ -34,7 +43,7 @@
                             "resources": {
                                 "requests": {
                                     "cpu": 1,
-                                    "memoryInGb": 1.5
+                                    "memoryInGb": 2
                                 }
                             },
                             "ports": [
